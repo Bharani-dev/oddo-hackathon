@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+  /* Premium dark travel palette */
+  --color-brand-50: #fef9f0;
+  --color-brand-100: #fef0d0;
+  --color-brand-200: #fcd98a;
+  --color-brand-300: #f9c23a;
+  --color-brand-400: #f5a623;
+  --color-brand-500: #e8941a;
+  --color-brand-600: #c97a10;
+  --color-brand-700: #a5620c;
+  --color-brand-800: #834e0a;
+  --color-brand-900: #6b3e08;
+
+  /* Dark neutrals */
+  --color-dark-950: #0a0a0a;
+  --color-dark-900: #111111;
+  --color-dark-800: #1c1c1c;
+  --color-dark-700: #2a2a2a;
+  --color-dark-600: #3d3d3d;
+  --color-dark-500: #555555;
+  --color-dark-400: #777777;
+  --color-dark-300: #999999;
+  --color-dark-200: #bbbbbb;
+  --color-dark-100: #dddddd;
+}
+
+@layer base {
+  body {
+    @apply bg-dark-950 text-white antialiased;
+    font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Inter', 'Helvetica Neue', sans-serif;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, #f5a623, #e8941a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .glass-light {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .card-dark {
+    background: #1c1c1c;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 1rem;
+  }
+
+  .btn-primary {
+    @apply bg-brand-500 hover:bg-brand-400 text-dark-950 font-black px-6 py-3 rounded-full transition-all duration-200 shadow-lg hover:shadow-brand-500/30 hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  .btn-outline {
+    @apply bg-transparent border border-white/20 hover:bg-white/10 text-white font-bold px-6 py-3 rounded-full transition-all duration-200;
+  }
+
+  .btn-dark {
+    @apply bg-dark-800 hover:bg-dark-700 border border-white/10 text-white font-bold px-6 py-3 rounded-xl transition-all duration-200;
+  }
+}
